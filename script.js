@@ -149,3 +149,64 @@ document.addEventListener("DOMContentLoaded", () => {
   range.addEventListener("input", () => setPos(range.value));
   setPos(range.value);
 });
+
+// ---------- Formularul rapid din hero ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("heroQuickForm");
+  const note = document.getElementById("hqfNote");
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    note.textContent = "";
+    note.className = "hqf-note";
+
+    const nume = form.nume.value.trim();
+    const telefon = form.telefon.value.trim();
+
+    if (!nume || !telefon) {
+      note.textContent = "Completează numele și telefonul.";
+      note.classList.add("is-error");
+      return;
+    }
+    if (!/^[0-9+\s()-]{6,20}$/.test(telefon)) {
+      note.textContent = "Verifică numărul de telefon.";
+      note.classList.add("is-error");
+      return;
+    }
+
+    const payload = {
+      nume,
+      telefon,
+      localitate: form.localitate.value,
+      serviciu: form.serviciu.value,
+      mesaj: "",
+    };
+
+    const btn = form.querySelector("button[type='submit']");
+    btn.disabled = true;
+    btn.textContent = "Se trimite...";
+
+    try {
+      const res = await fetch("trimite.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        note.textContent = "Mulțumim! Te contactăm în curând.";
+        note.classList.add("is-success");
+        form.reset();
+      } else {
+        throw new Error(data.error || "Eroare la trimitere");
+      }
+    } catch (err) {
+      note.textContent = "Nu am putut trimite. Sună-ne direct.";
+      note.classList.add("is-error");
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Trimite cererea";
+    }
+  });
+});

@@ -54,21 +54,17 @@
 
 <main>
 
-<section class="hero">
+<section class="hero hero-centered">
   <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/hero.jpg')"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow">Nordul Moldovei · Soroca, Florești, Drochia, Bălți</p>
-      <h1>Construim și reparăm<br>case pe care le poți<br>locui liniștit</h1>
-      <p class="hero-lead">Case la roșu și la cheie, reparații și renovări complete, meșteri pentru lucrări punctuale, acoperișuri și fațade. O echipă, un termen stabilit, o lucrare dusă la capăt.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Cere ofertă gratuită</a>
-        <a href="tel:+37360000000" class="btn btn-ghost">Sună: 060 000 000</a>
-      </div>
+  <div class="wrap hero-inner-centered">
+    <p class="eyebrow">Nordul Moldovei · Soroca, Florești, Drochia, Bălți</p>
+    <h1>Construim viitorul<br>caselor din nordul Moldovei</h1>
+    <p class="hero-lead">Construcție, reparații și renovări făcute cu un termen stabilit și o echipă care duce lucrarea la capăt.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Cere ofertă gratuită</a>
     </div>
 
-    <dl class="hero-stats" id="heroStats">
+    <dl class="hero-stats hero-stats-centered" id="heroStats">
       <div class="stat">
         <dt data-target="4">0</dt>
         <dd>raioane deservite</dd>
@@ -85,7 +81,44 @@
   </div>
 </section>
 
-<div class="tape-divider" aria-hidden="true"></div>
+<section class="proiecte-strip">
+  <div class="wrap proiecte-grid">
+    <a href="#portofoliu" class="proiect-card">
+      <div class="proiect-img-wrap">
+        <img src="assets/servicii-01-constructii.jpg" alt="Casă în construcție" loading="lazy">
+      </div>
+      <p class="eyebrow">Construcție</p>
+      <h3>Case la roșu și la cheie</h3>
+      <p>De la fundație până la acoperiș, cu un termen stabilit de la început.</p>
+      <span class="proiect-link">Vezi lucrările <span aria-hidden="true">→</span></span>
+    </a>
+    <a href="#portofoliu" class="proiect-card">
+      <div class="proiect-img-wrap">
+        <img src="assets/servicii-04-mesteri.jpg" alt="Meșter la lucru" loading="lazy">
+      </div>
+      <p class="eyebrow">Echipă</p>
+      <h3>Meșteri de încredere</h3>
+      <p>Aceeași echipă de la prima discuție până la recepția lucrării.</p>
+      <span class="proiect-link">Cum lucrăm <span aria-hidden="true">→</span></span>
+    </a>
+    <a href="#portofoliu" class="proiect-card">
+      <div class="proiect-img-wrap">
+        <img src="assets/galerie-01-casa.jpg" alt="Casă finalizată" loading="lazy">
+      </div>
+      <p class="eyebrow">Rezultat</p>
+      <h3>Lucrări duse la capăt</h3>
+      <p>Vezi câteva dintre proiectele finalizate în Soroca și raioanele vecine.</p>
+      <span class="proiect-link">Vezi portofoliul <span aria-hidden="true">→</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap cta-banner-inner">
+    <h2>Constructori serioși,<br>cu experiență în nordul Moldovei</h2>
+    <a href="#contact" class="btn-pill">Cere ofertă <span aria-hidden="true">→</span></a>
+  </div>
+</section>
 
 <section class="section" id="servicii">
   <div class="wrap">
@@ -386,7 +419,7 @@
         </li>
         <li>
           <span class="contact-label">E-mail</span>
-          <a href="mailto:TopConstruct.md">TopConstruct.md</a>
+          <a href="mailto:topcons@gmail.com">topcons@gmail.com</a>
         </li>
         <li>
           <span class="contact-label">Zonă</span>
@@ -496,11 +529,14 @@
   </div>
 
   <div class="wrap footer-bottom">
-    <p>© <span id="year"></span> <a href="TopConstruct.md" target="_blank" rel="noopener">TopConstruct.md</a>. Toate drepturile sunt rezervate.</p>
+    <p>© <span id="year"></span> <a href="TopConstruct SRL" target="_blank" rel="noopener">TopConstruct SRL</a>. Toate drepturile sunt rezervate.</p>
     <p>Dezvoltare site de <a href="https://codex.md/creare-site/" target="_blank" rel="noopener">Codex Line SRL</a></p>
   </div>
 </footer>
 
+<a href="https://t.me/TopConstructBot" target="_blank" rel="noopener" class="float-telegram" aria-label="Scrie-ne pe Telegram">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M21.94 4.6 18.6 20.36c-.25 1.13-.9 1.4-1.83.87l-5.06-3.73-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16 9.4-8.5c.41-.36-.09-.56-.63-.2L6.5 13.05l-5-1.56c-1.1-.34-1.12-1.1.23-1.63L20.56 3.4c.92-.34 1.72.22 1.38 1.2z"/></svg>
+</a>
 <a href="tel:+37360000000" class="float-call" aria-label="Sună acum">
   <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
