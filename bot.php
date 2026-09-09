@@ -14,9 +14,15 @@ loadEnv(__DIR__ . '/.env');
 
 $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '8874232679:AAFQ6WKPw5oXFxVYWbXgXRll1f1d5ARiFFE';
 $CHAT_ID   = $_ENV['TELEGRAM_CHAT_ID'] ?? '6437771799';
+<<<<<<< HEAD
 $SITE_URL  = $_ENV['SITE_URL'] ?? 'https://codex.md/';
 $PHONE     = $_ENV['CONTACT_PHONE'] ?? '+373 69 123 456';
 $EMAIL     = $_ENV['CONTACT_EMAIL'] ?? 'contact@topcons.md';
+=======
+$SITE_URL  = $_ENV['SITE_URL'] ?? '';
+$PHONE     = $_ENV['CONTACT_PHONE'] ?? '+373 78 123 456';
+$EMAIL     = $_ENV['CONTACT_EMAIL'] ?? 'andrianduglhe@gmail.com';
+>>>>>>> a58eea9 (Update site)
 
 if ($BOT_TOKEN === '' || $CHAT_ID === '') {
     die("Lipseste TELEGRAM_BOT_TOKEN sau TELEGRAM_CHAT_ID din .env\n");

@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   range.addEventListener("input", () => setPos(range.value));
   setPos(range.value);
 });
+<<<<<<< HEAD
 
 // ---------- Formularul rapid din hero ----------
 document.addEventListener("DOMContentLoaded", () => {
@@ -210,3 +211,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+=======
+>>>>>>> a58eea9 (Update site)
