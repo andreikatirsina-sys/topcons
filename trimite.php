@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$botToken = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '8874232679:AAFQ6WKPw5oXFxVYWbXgXRll1f1d5ARiFFE';
-$chatId   = $_ENV['TELEGRAM_CHAT_ID'] ?? '6437771799';
+$botToken = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '';
+$chatId   = $_ENV['TELEGRAM_CHAT_ID'] ?? '';
 
 if ($botToken === '' || $chatId === '') {
     http_response_code(500);
