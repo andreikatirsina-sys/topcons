@@ -101,3 +101,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// ---------- Numaratoare animata pentru cifrele din hero ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const stats = document.querySelectorAll("#heroStats [data-target]");
+  if (!stats.length) return;
+
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+    const duration = 900;
+    const start = performance.now();
+
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const statsContainer = document.getElementById("heroStats");
+  let played = false;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !played) {
+        played = true;
+        stats.forEach(animateCount);
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (statsContainer) observer.observe(statsContainer);
+});
+
+// ---------- Slider "Inainte / Dupa" ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const wrap = document.getElementById("beforeAfter");
+  const range = document.getElementById("baRange");
+  if (!wrap || !range) return;
+
+  function setPos(value) {
+    wrap.style.setProperty("--ba-pos", value + "%");
+  }
+
+  range.addEventListener("input", () => setPos(range.value));
+  setPos(range.value);
+});

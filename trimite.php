@@ -1,23 +1,21 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
 
+require __DIR__ . '/env.php';
+loadEnv(__DIR__ . '/.env');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(["ok" => false, "error" => "Metoda neacceptata"]);
     exit;
 }
 
-$configPath = __DIR__ . '/config.php';
-if (!file_exists($configPath)) {
-    http_response_code(500);
-    echo json_encode(["ok" => false, "error" => "Configurare lipsa pe server"]);
-    exit;
-}
-require $configPath;
+$botToken = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '';
+$chatId   = $_ENV['TELEGRAM_CHAT_ID'] ?? '';
 
-if (!defined('TELEGRAM_BOT_TOKEN') || !defined('TELEGRAM_CHAT_ID')) {
+if ($botToken === '' || $chatId === '') {
     http_response_code(500);
-    echo json_encode(["ok" => false, "error" => "Token Telegram neconfigurat"]);
+    echo json_encode(["ok" => false, "error" => "Configurare Telegram lipsa in .env"]);
     exit;
 }
 
@@ -73,25 +71,34 @@ $serviciiLabel = [
 $localitateText = $localitatiLabel[$localitate] ?? $localitate;
 $serviciuText   = $serviciiLabel[$serviciu] ?? $serviciu;
 
+function tgEscape($value) {
+    return str_replace(['&', '<', '>'], ['&amp;', '&lt;', '&gt;'], $value);
+}
+
+$divider = "━━━━━━━━━━━━━━━";
 $lines = [
-    "Cerere noua - TopCons.md", "",
-    "Nume: " . $nume,
-    "Telefon: " . $telefon,
-    "Localitate: " . ($localitateText !== '' ? $localitateText : '-'),
-    "Serviciu: " . ($serviciuText !== '' ? $serviciuText : '-'),
+    "🏗 <b>Cerere nouă</b> — <i>TopCons.md</i>",
+    $divider,
+    "👤 <b>Nume:</b> " . tgEscape($nume),
+    "📞 <b>Telefon:</b> <code>" . tgEscape($telefon) . "</code>",
+    "📍 <b>Localitate:</b> " . tgEscape($localitateText !== '' ? $localitateText : '-'),
+    "🛠 <b>Serviciu:</b> " . tgEscape($serviciuText !== '' ? $serviciuText : '-'),
 ];
-if ($mesaj !== '') { $lines[] = "Detalii: " . $mesaj; }
+if ($mesaj !== '') { $lines[] = "📝 <b>Detalii:</b> " . tgEscape($mesaj); }
+$lines[] = $divider;
+$lines[] = "🕒 " . date('d.m.Y, H:i');
 $text = implode("\n", $lines);
 
-$telegramUrl = "https://api.telegram.org/bot" . TELEGRAM_BOT_TOKEN . "/sendMessage";
+$telegramUrl = "https://api.telegram.org/bot" . $botToken . "/sendMessage";
 $ch = curl_init($telegramUrl);
 curl_setopt_array($ch, [
     CURLOPT_POST => true,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT => 10,
     CURLOPT_POSTFIELDS => http_build_query([
-        'chat_id' => TELEGRAM_CHAT_ID,
+        'chat_id' => $chatId,
         'text' => $text,
+        'parse_mode' => 'HTML',
     ]),
 ]);
 $response = curl_exec($ch);

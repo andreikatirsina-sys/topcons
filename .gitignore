@@ -1,0 +1,5 @@
+# Fisierul cu credentiale reale - NU se urca niciodata pe git
+.env
+
+# Fisiere vechi/temporare pastrate local, nu au ce cauta in repo
+*_vechi.php

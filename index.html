@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -55,7 +55,7 @@
 <main>
 
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true" style="background-image:url('https://images.unsplash.com/photo-1593786267440-550458cc882a?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')"></div>
+  <div class="hero-bg" aria-hidden="true" style="background-image:url('assets/hero.jpg')"></div>
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -68,22 +68,24 @@
       </div>
     </div>
 
-    <dl class="hero-stats">
+    <dl class="hero-stats" id="heroStats">
       <div class="stat">
-        <dt>4</dt>
+        <dt data-target="4">0</dt>
         <dd>raioane deservite</dd>
       </div>
       <div class="stat">
-        <dt>6</dt>
+        <dt data-target="6">0</dt>
         <dd>tipuri de lucrări</dd>
       </div>
       <div class="stat">
-        <dt>1</dt>
+        <dt data-target="1">0</dt>
         <dd>echipă, de la ofertă la recepție</dd>
       </div>
     </dl>
   </div>
 </section>
+
+<div class="tape-divider" aria-hidden="true"></div>
 
 <section class="section" id="servicii">
   <div class="wrap">
@@ -95,7 +97,7 @@
 
     <div class="service-grid">
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Casă în construcție" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Casă în construcție" src="assets/servicii-01-constructii.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">01</span>
           <h3>Construcții case</h3>
@@ -103,7 +105,7 @@
         </div>
       </article>
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Reparație cu unelte de mână" src="https://images.unsplash.com/photo-1643509867448-57001e0c333d?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Reparație cu unelte de mână" src="assets/servicii-02-reparatii.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">02</span>
           <h3>Reparații</h3>
@@ -111,7 +113,7 @@
         </div>
       </article>
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Plan de renovare a unei locuințe" src="https://images.unsplash.com/photo-1556156653-e5a7c69cc263?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Plan de renovare a unei locuințe" src="assets/servicii-03-renovari.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">03</span>
           <h3>Renovări</h3>
@@ -119,7 +121,7 @@
         </div>
       </article>
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Meșter la lucru pe structura casei" src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Meșter la lucru pe structura casei" src="assets/servicii-04-mesteri.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">04</span>
           <h3>Meșteri</h3>
@@ -127,7 +129,7 @@
         </div>
       </article>
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Lucrări la acoperiș" src="https://images.unsplash.com/photo-1635424824849-1b09bdcc55b1?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Lucrări la acoperiș" src="assets/servicii-05-acoperisuri.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">05</span>
           <h3>Acoperișuri</h3>
@@ -135,7 +137,7 @@
         </div>
       </article>
       <article class="service-card">
-        <img class="service-img" loading="lazy" alt="Fațada unei clădiri renovate" src="https://images.unsplash.com/photo-1565145211217-d0f630de0004?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+        <img class="service-img" loading="lazy" alt="Fațada unei clădiri renovate" src="assets/servicii-06-fatade.jpg">
         <div class="service-body">
           <span class="service-mark" aria-hidden="true">06</span>
           <h3>Fațade</h3>
@@ -152,7 +154,7 @@
       <p class="eyebrow">De ce TopCons</p>
       <h2>Un singur partener, de la primul metru până la ultimul detaliu</h2>
       <p class="section-lead">Suntem o echipă din nordul Moldovei care preferă o discuție clară, un termen realist și o lucrare dusă la capăt fără scurtături.</p>
-      <img class="why-img" loading="lazy" alt="Șantier de construcție în lucru" src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?q=80&amp;w=900&amp;auto=format&amp;fit=crop">
+      <img class="why-img" loading="lazy" alt="Șantier de construcție în lucru" src="assets/why-santier.jpg">
     </div>
 
     <ul class="why-list">
@@ -264,25 +266,46 @@
 
     <div class="gallery-grid">
       <div class="gallery-slot gallery-slot-lg">
-        <img loading="lazy" alt="Casă cu etaj, ferestre și balcoane" src="https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?q=80&amp;w=1000&amp;auto=format&amp;fit=crop">
+        <img loading="lazy" alt="Casă cu etaj, ferestre și balcoane" src="assets/galerie-01-casa.jpg">
         <span>Construcție case</span>
       </div>
       <div class="gallery-slot">
-        <img loading="lazy" alt="Doi muncitori lucrează la acoperișul unei case" src="https://images.unsplash.com/photo-1635424709961-f3a150459ad4?q=80&amp;w=700&amp;auto=format&amp;fit=crop">
+        <img loading="lazy" alt="Doi muncitori lucrează la acoperișul unei case" src="assets/galerie-02-acoperis.jpg">
         <span>Acoperiș</span>
       </div>
       <div class="gallery-slot">
-        <img loading="lazy" alt="Clădire cu fațadă maro și albă" src="https://images.unsplash.com/photo-1580747244280-08248054e21a?q=80&amp;w=700&amp;auto=format&amp;fit=crop">
+        <img loading="lazy" alt="Clădire cu fațadă maro și albă" src="assets/galerie-03-fatada.jpg">
         <span>Fațadă</span>
       </div>
       <div class="gallery-slot">
-        <img loading="lazy" alt="Clădire modernă gri și albă" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&amp;w=700&amp;auto=format&amp;fit=crop">
+        <img loading="lazy" alt="Clădire modernă gri și albă" src="assets/galerie-04-renovare.jpg">
         <span>Renovare</span>
       </div>
       <div class="gallery-slot gallery-slot-lg">
-        <img loading="lazy" alt="Muncitor pe structura unei clădiri" src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&amp;w=1000&amp;auto=format&amp;fit=crop">
+        <img loading="lazy" alt="Muncitor pe structura unei clădiri" src="assets/servicii-04-mesteri.jpg">
         <span>Reparație</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inainte-dupa">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Rezultatul muncii</p>
+      <h2>Înainte și după</h2>
+      <p class="section-lead">Trage de linie ca să vezi diferența. (Poze demonstrative — se înlocuiesc cu fotografii reale de la o lucrare finalizată.)</p>
+    </div>
+
+    <div class="before-after" id="beforeAfter">
+      <img class="ba-img ba-before" src="assets/servicii-01-constructii.jpg" alt="Înainte de lucrare">
+      <img class="ba-img ba-after" src="assets/galerie-01-casa.jpg" alt="După finalizarea lucrării">
+      <span class="ba-label ba-label-before">Înainte</span>
+      <span class="ba-label ba-label-after">După</span>
+      <div class="ba-handle" id="baHandle" aria-hidden="true">
+        <span class="ba-handle-grip">⇔</span>
+      </div>
+      <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" aria-label="Glisează pentru a compara înainte și după">
     </div>
   </div>
 </section>
@@ -363,7 +386,7 @@
         </li>
         <li>
           <span class="contact-label">E-mail</span>
-          <a href="mailto:contact@topcons.md">contact@topcons.md</a>
+          <a href="mailto:TopConstruct.md">TopConstruct.md</a>
         </li>
         <li>
           <span class="contact-label">Zonă</span>
@@ -429,6 +452,8 @@
 
 </main>
 
+<div class="hazard-divider" aria-hidden="true"></div>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
 
@@ -463,7 +488,7 @@
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+37360000000">+373 60 000 000</a></li>
-        <li><a href="mailto:contact@topcons.md">contact@topcons.md</a></li>
+        <li><a href="mailto:PUNE_AICI@gmail.com">PUNE_AICI@gmail.com</a></li>
         <li>Soroca, Republica Moldova</li>
       </ul>
     </div>
@@ -471,8 +496,8 @@
   </div>
 
   <div class="wrap footer-bottom">
-    <p>© <span id="year"></span> TopCons.md. Toate drepturile rezervate.</p>
-    <p>Dezvoltat de <a href="https://codex.md/creare-site/" target="_blank" rel="noopener">Codex Line</a></p>
+    <p>© <span id="year"></span> <a href="TopConstruct.md" target="_blank" rel="noopener">TopConstruct.md</a>. Toate drepturile sunt rezervate.</p>
+    <p>Dezvoltare site de <a href="https://codex.md/creare-site/" target="_blank" rel="noopener">Codex Line SRL</a></p>
   </div>
 </footer>
 
