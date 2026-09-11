@@ -6,9 +6,9 @@
 
 $ErrorActionPreference = "Stop"
 
-$folder = "assets"
+$folder = "assets\images"
 if (!(Test-Path $folder)) {
-    New-Item -ItemType Directory -Path $folder | Out-Null
+    New-Item -ItemType Directory -Path $folder -Force | Out-Null
 }
 
 $images = @{

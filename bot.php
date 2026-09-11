@@ -12,11 +12,11 @@
 require __DIR__ . '/env.php';
 loadEnv(__DIR__ . '/.env');
 
-$BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '';
-$CHAT_ID   = $_ENV['TELEGRAM_CHAT_ID'] ?? '';
-$SITE_URL  = $_ENV['SITE_URL'] ?? '';
-$PHONE     = $_ENV['CONTACT_PHONE'] ?? '';
-$EMAIL     = $_ENV['CONTACT_EMAIL'] ?? '';
+$BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? '8874232679:AAFQ6WKPw5oXFxVYWbXgXRll1f1d5ARiFFE ';
+$CHAT_ID   = $_ENV['TELEGRAM_CHAT_ID'] ?? '6437771799 ';
+$SITE_URL  = $_ENV['SITE_URL'] ?? 'topcons.md';
+$PHONE     = $_ENV['CONTACT_PHONE'] ?? '+373 78 123 456';
+$EMAIL     = $_ENV['CONTACT_EMAIL'] ?? 'topcons@gmail.com';
 
 if ($BOT_TOKEN === '' || $CHAT_ID === '') {
     die("Lipseste TELEGRAM_BOT_TOKEN sau TELEGRAM_CHAT_ID din .env\n");
@@ -165,7 +165,7 @@ while (true) {
                     $numeUser = $from['first_name'] ?? '';
                     tgSendPhoto(
                         $chatId,
-                        __DIR__ . '/assets/hero.jpg',
+                        __DIR__ . '/assets/images/hero.jpg',
                         "👋 Salut" . ($numeUser ? ", {$numeUser}" : "") . "! Bine ai venit la <b>TopCons.md</b>.\n\n"
                         . "Facem construcții, reparații și renovări în nordul Moldovei.\n"
                         . "Alege o opțiune mai jos 👇",
